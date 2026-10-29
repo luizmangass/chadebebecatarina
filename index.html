@@ -117,6 +117,22 @@ h2 { text-align: center; font-family: var(--script); font-size: clamp(40px, 9vw,
 .gift.free .ico { background: var(--card); }
 .gift.free p { color: var(--brick); }
 
+.gift.free .price { font-size: 16px; }
+/* fundo do mar */
+.seabed { position: relative; height: 150px; margin-top: -20px; overflow: hidden; }
+.seabed .sand { position: absolute; inset: auto 0 0; width: 100%; height: 70px; }
+.reef { position: absolute; bottom: 14px; }
+.reef svg { display: block; width: 100%; height: auto; }
+.weed svg { transform-origin: 50% 100%; animation: sway 4s ease-in-out infinite; }
+@keyframes sway { 50% { transform: rotate(5deg); } }
+.crab { border: 0; padding: 0; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.crab svg { animation: wiggle 2.4s ease-in-out infinite; }
+@keyframes wiggle { 50% { transform: translateY(-2px) rotate(-3deg); } }
+.crab:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 12px; }
+.crab.scuttle { animation: scuttle 1.6s ease-in-out; }
+@keyframes scuttle { 25% { transform: translateX(-30px); } 60% { transform: translateX(40px); } 100% { transform: none; } }
+@media (max-width: 560px) { .reef.wide-only { display: none; } }
+@media (prefers-reduced-motion: reduce) { .reef svg, .crab, .crab svg { animation: none !important; } }
 .foot { background: var(--sand-deep); color: var(--brick); text-align: center; font-weight: 700; font-size: 14px; }
 .foot .wrap { padding-block: 22px; }
 
@@ -208,12 +224,27 @@ h2 { text-align: center; font-family: var(--script); font-size: clamp(40px, 9vw,
       <p>Salão de Festas do Condomínio Uba Itaipu · Itaipu, Niterói – RJ</p>
     </div>
 
-    <h2>Escolha um mimo</h2>
+    <h2>Presenteie nossa princesa</h2>
     <p class="sub">Toque no presente e faça um Pix. Se preferir, escolha o valor que quiser em “Cota livre”.</p>
 
     <div class="setup" id="setup" hidden>Falta configurar a chave Pix. Enquanto isso, os pagamentos ficam desativados nesta página.</div>
 
     <div class="grid" id="grid"></div>
+  </div>
+  <div class="seabed">
+    <svg class="sand" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34 C150 14 300 44 450 30 C620 14 760 40 900 28 C1030 18 1120 34 1200 26 V70 H0Z" fill="#F3D3A6"/><path d="M0 50 C200 38 400 58 600 48 C800 38 1000 56 1200 46 V70 H0Z" fill="#EBC48F" opacity=".6"/></svg>
+    <div class="reef weed" style="left:1%;width:40px;bottom:16px"><svg viewBox="0 0 40 110" aria-hidden="true"><g stroke="#5E9B7C" stroke-width="7" stroke-linecap="round" fill="none"><path d="M14 108 C4 84 24 70 12 46 C4 30 16 18 12 4"/><path d="M28 108 C36 88 20 76 30 56 C36 44 28 32 32 22" stroke="#7BB08F"/></g></svg></div>
+    <div class="reef " style="left:7%;width:78px;bottom:14px"><svg viewBox="0 0 80 92" aria-hidden="true"><g stroke="#F08AA4" stroke-width="9" stroke-linecap="round" fill="none"><path d="M40 88 V40"/><path d="M40 62 C40 46 20 46 18 26"/><path d="M40 52 C40 36 60 40 62 18"/><path d="M19 42 L8 32"/><path d="M61 32 L72 24"/><path d="M40 40 V12"/></g></svg></div>
+    <div class="reef " style="left:16%;width:34px;bottom:10px"><svg viewBox="0 0 48 44" aria-hidden="true"><path d="M24 40 C8 38 2 24 4 14 C10 4 38 4 44 14 C46 24 40 38 24 40Z" fill="#FBD3DC"/><g stroke="#E58AA0" stroke-width="2" stroke-linecap="round"><path d="M24 39 V8"/><path d="M24 39 L13 10"/><path d="M24 39 L35 10"/><path d="M24 39 L6 18"/><path d="M24 39 L42 18"/></g><rect x="17" y="38" width="14" height="5" rx="2" fill="#E58AA0"/></svg></div>
+    <button class="reef crab" style="left:23%;width:72px;bottom:8px" aria-label="Caranguejo"><svg viewBox="0 0 84 56" aria-hidden="true"><g stroke="#C9432F" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M22 38 L8 44"/><path d="M24 44 L12 53"/><path d="M62 38 L76 44"/><path d="M60 44 L72 53"/><path d="M28 30 L16 20"/><path d="M56 30 L68 20"/><path d="M34 24 L31 12"/><path d="M50 24 L53 12"/></g><circle cx="13" cy="16" r="9" fill="#E8604C"/><circle cx="71" cy="16" r="9" fill="#E8604C"/><path d="M6 10 L14 17" stroke="#C9432F" stroke-width="2.5" stroke-linecap="round"/><path d="M78 10 L70 17" stroke="#C9432F" stroke-width="2.5" stroke-linecap="round"/><ellipse cx="42" cy="36" rx="24" ry="15" fill="#E8604C"/><circle cx="31" cy="11" r="5" fill="#FFFFFF"/><circle cx="53" cy="11" r="5" fill="#FFFFFF"/><circle cx="32" cy="11" r="2.3" fill="#3C2A27"/><circle cx="52" cy="11" r="2.3" fill="#3C2A27"/><circle cx="30" cy="38" r="3" fill="#F4A3B5"/><circle cx="54" cy="38" r="3" fill="#F4A3B5"/><path d="M37 37 q5 4 10 0" stroke="#3C2A27" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+    <div class="reef wide-only" style="left:36%;width:66px;bottom:16px"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 78 C10 70 4 40 12 20 C24 6 56 6 68 20 C76 40 70 70 40 78Z" fill="#F4A3B5"/><g stroke="#D9577A" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M40 76 V16"/><path d="M40 60 L22 30"/><path d="M40 60 L58 30"/><path d="M40 46 L14 40"/><path d="M40 46 L66 40"/></g></svg></div>
+    <div class="reef " style="left:45%;width:40px;bottom:8px"><svg viewBox="0 0 50 48" aria-hidden="true"><path d="M25 3 L31 18 L47 18 L34 28 L39 45 L25 35 L11 45 L16 28 L3 18 L19 18Z" fill="#F6CF6A" stroke="#E8A93E" stroke-width="2.5" stroke-linejoin="round"/><circle cx="25" cy="25" r="2" fill="#E8A93E"/><circle cx="18" cy="21" r="1.5" fill="#E8A93E"/><circle cx="32" cy="21" r="1.5" fill="#E8A93E"/></svg></div>
+    <div class="reef " style="left:53%;width:70px;bottom:16px"><svg viewBox="0 0 80 92" aria-hidden="true"><g stroke="#F2A470" stroke-width="9" stroke-linecap="round" fill="none"><path d="M40 88 V40"/><path d="M40 62 C40 46 20 46 18 26"/><path d="M40 52 C40 36 60 40 62 18"/><path d="M19 42 L8 32"/><path d="M61 32 L72 24"/><path d="M40 40 V12"/></g></svg></div>
+    <div class="reef wide-only" style="left:63%;width:32px;bottom:8px"><svg viewBox="0 0 48 40" aria-hidden="true"><path d="M6 36 C4 18 16 6 30 8 C42 10 46 22 40 30 C36 36 26 36 24 28 C22 22 30 18 33 23" fill="#FCE9CF" stroke="#E0A86F" stroke-width="3" stroke-linecap="round"/><path d="M6 36 H44" stroke="#E0A86F" stroke-width="3" stroke-linecap="round"/></svg></div>
+    <button class="reef crab" style="left:70%;width:58px;bottom:10px" aria-label="Caranguejinho"><svg viewBox="0 0 84 56" aria-hidden="true"><g stroke="#C9432F" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M22 38 L8 44"/><path d="M24 44 L12 53"/><path d="M62 38 L76 44"/><path d="M60 44 L72 53"/><path d="M28 30 L16 20"/><path d="M56 30 L68 20"/><path d="M34 24 L31 12"/><path d="M50 24 L53 12"/></g><circle cx="13" cy="16" r="9" fill="#E8604C"/><circle cx="71" cy="16" r="9" fill="#E8604C"/><path d="M6 10 L14 17" stroke="#C9432F" stroke-width="2.5" stroke-linecap="round"/><path d="M78 10 L70 17" stroke="#C9432F" stroke-width="2.5" stroke-linecap="round"/><ellipse cx="42" cy="36" rx="24" ry="15" fill="#E8604C"/><circle cx="31" cy="11" r="5" fill="#FFFFFF"/><circle cx="53" cy="11" r="5" fill="#FFFFFF"/><circle cx="32" cy="11" r="2.3" fill="#3C2A27"/><circle cx="52" cy="11" r="2.3" fill="#3C2A27"/><circle cx="30" cy="38" r="3" fill="#F4A3B5"/><circle cx="54" cy="38" r="3" fill="#F4A3B5"/><path d="M37 37 q5 4 10 0" stroke="#3C2A27" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+    <div class="reef " style="left:80%;width:78px;bottom:18px"><svg viewBox="0 0 80 92" aria-hidden="true"><g stroke="#F08AA4" stroke-width="9" stroke-linecap="round" fill="none"><path d="M40 88 V40"/><path d="M40 62 C40 46 20 46 18 26"/><path d="M40 52 C40 36 60 40 62 18"/><path d="M19 42 L8 32"/><path d="M61 32 L72 24"/><path d="M40 40 V12"/></g></svg></div>
+    <div class="reef wide-only" style="left:90%;width:36px;bottom:8px"><svg viewBox="0 0 48 44" aria-hidden="true"><path d="M24 40 C8 38 2 24 4 14 C10 4 38 4 44 14 C46 24 40 38 24 40Z" fill="#FBD3DC"/><g stroke="#E58AA0" stroke-width="2" stroke-linecap="round"><path d="M24 39 V8"/><path d="M24 39 L13 10"/><path d="M24 39 L35 10"/><path d="M24 39 L6 18"/><path d="M24 39 L42 18"/></g><rect x="17" y="38" width="14" height="5" rx="2" fill="#E58AA0"/></svg></div>
+    <div class="reef weed" style="left:94%;width:40px;bottom:20px"><svg viewBox="0 0 40 110" aria-hidden="true"><g stroke="#5E9B7C" stroke-width="7" stroke-linecap="round" fill="none"><path d="M14 108 C4 84 24 70 12 46 C4 30 16 18 12 4"/><path d="M28 108 C36 88 20 76 30 56 C36 44 28 32 32 22" stroke="#7BB08F"/></g></svg></div>
   </div>
 </main>
 
@@ -249,15 +280,16 @@ const PIX = {
   cidade: "NITEROI"             // cidade (até 15 letras, sem acento)
 };
 const PRESENTES = [
-  { nome: "Pacote de fraldas RN", desc: "Para os primeiros dias, que passam voando.", valor: 60, icone: "fralda" },
-  { nome: "Pacote de fraldas P", desc: "O tamanho que mais se usa no começo.", valor: 80, icone: "fralda" },
-  { nome: "Pacote de fraldas M", desc: "Para quando ela começar a crescer.", valor: 90, icone: "fralda" },
-  { nome: "Kit lenços umedecidos", desc: "Nunca é demais.", valor: 40, icone: "gota" },
-  { nome: "Pomada para assaduras", desc: "Cuidado com a pele delicada.", valor: 35, icone: "gota" },
-  { nome: "Kit de bodies", desc: "Roupinhas para o dia a dia.", valor: 120, icone: "body" },
-  { nome: "Kit de mamadeiras", desc: "Para os passeios e as madrugadas.", valor: 90, icone: "mamadeira" },
-  { nome: "Banheira", desc: "O primeiro mar da Catarina.", valor: 180, icone: "onda" },
-  { nome: "Livrinho de pano", desc: "As primeiras histórias.", valor: 50, icone: "livro" },
+  { nome: "Fralda Pampers Premium Care RN", desc: "Pacote com 36 unidades, para os primeiros dias.", valor: 56, icone: "fralda" },
+  { nome: "Fralda Pampers Premium Care P", desc: "Pacote com 40 unidades.", valor: 77, icone: "fralda" },
+  { nome: "Fralda Pampers Premium Care M", desc: "Pacote com 80 unidades.", valor: 155, icone: "fralda" },
+  { nome: "Fralda Pampers Premium Care G", desc: "Pacote com 68 unidades, para quando ela crescer.", valor: 155, icone: "fralda" },
+  { nome: "Lenços umedecidos Pampers", desc: "Kit com 4 pacotes (192 lenços).", valor: 43, icone: "gota" },
+  { nome: "Bepantol Baby 120 g", desc: "Cuidado com a pele delicada.", valor: 75, icone: "gota" },
+  { nome: "Kit com 5 bodies", desc: "Roupinhas para o dia a dia.", valor: 50, icone: "body" },
+  { nome: "Kit mamadeiras Philips Avent", desc: "Anticólica, com 3 tamanhos.", valor: 129, icone: "mamadeira" },
+  { nome: "Banheira", desc: "O primeiro mar da Catarina.", valor: 160, icone: "onda" },
+  { nome: "Livrinho de pano", desc: "As primeiras histórias.", valor: 40, icone: "livro" },
   { nome: "Cota para o carrinho", desc: "Ajuda para os passeios na orla.", valor: 250, icone: "concha" },
   { nome: "Cota livre", desc: "Você escolhe o valor.", valor: null, icone: "coracao" }
 ];
@@ -392,6 +424,11 @@ function play(el) {
   });
 }
 document.querySelectorAll(".critter").forEach(el => el.addEventListener("click", () => play(el)));
+document.querySelectorAll(".crab").forEach(el => el.addEventListener("click", () => {
+  if (reduce || el.classList.contains("scuttle")) return;
+  el.classList.add("scuttle");
+  el.addEventListener("animationend", function h(e) { if (e.target !== el) return; el.classList.remove("scuttle"); el.removeEventListener("animationend", h); });
+}));
 if (!reduce) {
   const ray = document.querySelector(".ray");
   setTimeout(() => play(ray), 1200);
